@@ -4,12 +4,28 @@ import { useState, useEffect } from 'react';
 import { Search, Loader2, Star, Sparkles, X, Info } from 'lucide-react';
 import { searchAnime, Anime } from '@/lib/jikan';
 
+interface EnrichedRecommendation {
+  mal_id: number;
+  tier: number;
+  score: number;
+  explanation: string;
+  metadata: {
+    title: string;
+    image_url: string;
+    score: number;
+    synopsis: string;
+    genres: string[];
+    year?: number;
+    episodes?: number;
+  };
+}
+
 export default function Home() {
   const [query, setQuery] = useState('');
   const [searchResults, setSearchResults] = useState<Anime[]>([]);
   const [isSearching, setIsSearching] = useState(false);
   const [likedAnime, setLikedAnime] = useState<Anime[]>([]);
-  const [recommendations, setRecommendations] = useState<Record<string, unknown>[]>([]);
+  const [recommendations, setRecommendations] = useState<EnrichedRecommendation[]>([]);
   const [isGettingRecs, setIsGettingRecs] = useState(false);
   const [page, setPage] = useState(1);
   const [hasMore, setHasMore] = useState(false);
