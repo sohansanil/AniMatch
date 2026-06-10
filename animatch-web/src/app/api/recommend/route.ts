@@ -53,7 +53,7 @@ export async function POST(request: Request) {
               title: metadata.title,
               image_url: metadata.images.jpg.large_image_url,
               synopsis: metadata.synopsis,
-              genres: metadata.genres.map(g => g.name).join(', '),
+              genres: metadata.genres ? metadata.genres.map((g: any) => g.name) : [],
               score: metadata.score,
               year: metadata.year,
               episodes: metadata.episodes
