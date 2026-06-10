@@ -255,7 +255,7 @@ export default function Home() {
                         
                         {rec.metadata.genres && (
                           <div className="flex flex-wrap gap-1.5">
-                            {rec.metadata.genres.split(',').map((genre: string) => (
+                            {rec.metadata.genres.map((genre: string) => (
                               <span key={genre} className="px-2 py-0.5 bg-slate-800/50 text-slate-300 rounded text-[10px] font-medium border border-slate-700/50">
                                 {genre.trim()}
                               </span>
