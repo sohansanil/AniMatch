@@ -1,5 +1,7 @@
 # AniMatch 🌸
 
+**Live Demo:** [https://animatch-web-flax.vercel.app](https://animatch-web-flax.vercel.app)
+
 AniMatch is an AI-powered anime recommendation engine that helps you find your next favorite show. By analyzing 57 million user ratings, AniMatch maps out the complex relationships between over 17,000 anime to deliver personalized, explainable recommendations.
 
 ![AniMatch Preview](./animatch-web/public/cherry-bg.png)
